@@ -1,0 +1,70 @@
+Let's make a game!
+  name:Felps Clicker
+  by:Doodlenapdev
+  version:1 
+Settings
+  background:Zé/Felps_Clicker/carinha_laranja.jpg
+  building cost increase:115%
+  building cost refund:50%
+
+Resources
+   *Felps
+      name:Felps
+      desc:o próprio.
+      icon:icons[0,0]
+      class:noBackground
+      show earned
+       
+Buildings
+   *TEMPLATE
+      on click:anim glow
+   *Clicadores_de_Felps
+        name:Clicadores de Felps
+        desc:um mouse que clica no Felps.<//><b>Effect:</b><.>Produs 1 Felps a cada 10 segundos
+        cost:15 Felps
+        icon:icons [3,0]
+        on tick:yield 0.1 Felps
+        unlocked
+    *Meiaum
+        name:Meiaum
+        desc:Meiaum.<//><b>Effect:</b><.>Produs 1 Felps por segundo
+        cost:100 Felps
+        icon:icons
+        on tick:yield 1 Felps
+        unlocked
+
+Buttons
+    *BotãoFelps
+     desc: Clica no Felps para conseguir mais Felps!
+     on click:anim icon wobble
+     on click yield 1 Felps
+     icon:Zé/Felps_Clicker/Felps_Real.jpg
+     no text 
+     class:bigButton hasFlares
+     icon class:shadowed
+     tooltip origin:bottom
+     tooltip class:red
+Upgrades
+    *TEMPLATE
+         on click:anim glow
+    *FelpsAzul
+        name:Felps com cabelo azul
+        desc:+1 Felps por clique
+        icon:icons[1,1]
+        cost:100 Felps
+        passive:increase Felps yield of BotãoFelps by 1
+        req:10 Felps:earned
+    *FelpsAmarelo
+        name:Felps com cabelo amarelo
+        desc:+5 Felps por clique
+        icon:icons[1,2]
+        cost:500 Felps
+        passive:increase Felps yield of BotãoFelps by 5
+        req:100 Felps
+    * FelpsLaranja
+        name:Felps com cabelo laranja
+        desc:+10 Felps por clique
+        icon:icons[1,3]
+        cost:1000 Felps
+        passive:increase Felps yield of BotãoFelps by 15
+        req:500 Felps
